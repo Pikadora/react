@@ -1,0 +1,12 @@
+{
+    "presets": [["es2015", { "targets": "last 2 versions, ie 11", "modules": false }], "stage-0", "react"],
+    "plugins": [
+        [
+        "import",
+        {
+            "libraryName": "antd",
+            "libraryDirectory": "es",
+            "style": true
+        }
+    ]]
+}

@@ -1,0 +1,8 @@
+{
+    "@primary-color": "#ef4836",
+    "@menu-item-color": "darkgray",
+    "@link-color": "@primary-color",
+    "@layout-header-background": "white",
+    "@border-radius-base": "2px",
+    "@icon-url": "'/static/iconfont'"
+}

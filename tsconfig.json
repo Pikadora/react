@@ -1,0 +1,38 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": { "*": ["types/*"] },
+        "outDir": "build/dist",
+        "module": "esnext",
+        "target": "es6",
+        "lib": ["es2017", "es6", "dom"],
+        "sourceMap": true,
+        "allowJs": true,
+        "jsx": "react",
+        "moduleResolution": "node",
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        //"suppressImplicitAnyErrors": true,
+        "noUnusedLocals": true,
+        // "allowSyntheticDefualtImports": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "downlevelIteration": true,
+        // "useCache": true
+    },
+    "exclude": [
+        "node_modules",
+        "build",
+        "scripts",
+        "config",
+        "webpack",
+        "src",
+        "target",
+        "acceptance-tests",
+        "jest",
+        "templates",
+        "app/components/util/MaskedInput"
+    ]
+}
