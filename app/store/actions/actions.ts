@@ -1,108 +1,80 @@
-import * as Types from '../../components/rights/types'
+import { Dispatch } from 'redux';
+import * as api from '../../api';
+import * as Types from './types';
 
-const data = [
-    {
-        login: '65pikalovaya',
-        name: 'Пикалова Юлия Александровна',
-        securityGroupsFromProject: [
-            {
-                id: 'PortfolioAdmin', 
-                title: 'Администраторы порфеля', 
-                rights:[
-                    'Добавлять проекты',
-                    'Видеть все проекты',
-                    'Редактирвоать проекты',
-                    'Точечная настройка разрешений к проекту'
-                ]
-            }                
-        ],
-        securityGroupsFromSharepoint: [
-            {
-                id: 'Dpp', 
-                title: 'Работники ДПП', 
-                rights:[
-                    'Все проекты',
-                    'Переключатель "Расширенный/краткий/Инициативы"',
-                    'Круговые диаграммы для сотрудников ДПП',
-                    'Круговые диаграммы "Статус и риски"',
-                    'Программы',
-                    'Направления',
-                    'Приостановленные проекты',
-                    'Риски',
-                    'Контроль поручений',
-                    'Документы проекта'
-                ]
+export const getUsersFromApi = ():any => {
+    return async (dispatch:Dispatch, getState: () => any) => {
+        try {
+            const state = getState();
+            dispatch(loading(true));
+            const response: any = await api.getUsers();
+            console.log(response);
+            if (response !== undefined && response !== null) {
+                if (response.users.Success){
+                    dispatch(getData(state));
+                    console.log(state);
+                    dispatch(updateMochUpUsers(response.users.Payload));
+                    dispatch(loading(false));
+                } else {
+                    dispatch(getError({type: "modal", message: response.users.Message}));
+                    dispatch(loading(false));
+                }
+            } else {
+                dispatch(getError({type: "modal", message: "Неизвестная ошибка"}));
+                dispatch(loading(false));
             }
-        ]
-    },
-    {
-        login: '65ivanovii',
-        name: 'Иванов Иван Иванович',
-        securityGroupsFromProject: [
-            {
-                id: 'PortfolioAdmin', 
-                title: 'Администраторы порфеля', 
-                rights:[
-                    'Добавлять проекты',
-                    'Видеть все проекты',
-                    'Редактирвоать проекты',
-                    'Точечная настройка разрешений к проекту'
-                ]
-            }                
-        ],
-        securityGroupsFromSharepoint: [
-            {
-                id: 'Dpp', 
-                title: 'Работники ДПП', 
-                rights:[
-                    'Все проекты',
-                    'Переключатель "Расширенный/краткий/Инициативы"',
-                    'Круговые диаграммы для сотрудников ДПП',
-                    'Круговые диаграммы "Статус и риски"',
-                    'Программы',
-                    'Направления',
-                    'Приостановленные проекты',
-                    'Риски',
-                    'Контроль поручений',
-                    'Документы проекта'
-                ]
-            }
-        ]
-    },
-]
-
-export interface RightsInitialStateInterface {
-    users: Types.RightsResponseInterface[];
-    isLoginTrue:boolean;
-    user:Types.RightsInfoInterface,
-    isLoadingRights:boolean;
-    errorData: null;
+        } catch (error){
+            dispatch(getError({type: "modal", message: error.message}));
+            dispatch(loading(false));
+        }
+    } 
 }
 
-export const getData = () => {
+export const loading = (data: boolean) => {
+    return {
+        payload: { data },
+        type: 'LOADING',
+    };
+}
+
+export const getError = (data: {type: "modal", message: string | null}) => {
+    return {
+        payload: { data },
+        type: 'GET_ERROR',
+    };
+}
+
+export const getData = (data:any): Types.GetDataSuccessInterface => {
     return{
-        payload:{
-            data:data,
-        },
+        payload:{data},
         type: 'GET_MOCKUP_DATA',
     }
 }
 
-export const getMochUpUser = (item: boolean, newUser: Types.RightsInfoInterface) => {
+export const updateUser = (item: boolean, newUser:any): Types.UpdateUserSuccessInterface => {
     return{
         payload:{
             isLoginTrue: item,
             user:  newUser,
         },
-        type: 'GET_MOCKUP_USER',
+        type: 'UPDATE_USER',
     }
 }
 
-export const getMochUpUsers = (users: Types.RightsResponseInterface[]) => {
+export const updateMochUpUsers = (users:any): Types.UpdateUsersSuccessInterface => {
     return{
-        payload:{
-            users:  users,
+        payload: { 
+            users:users,
         },
-        type: 'GET_MOCKUP_USERS',
+        type: 'UPDATE_MOCHUP_USERS',
+    }
+}
+
+export const getMochUpUsers = (users:any): Types.GetUsersSuccessInterface => {
+    return{
+        payload: { 
+            users:users,
+        },
+        type: 'GET_MOCHUP_USERS',
     }
 }

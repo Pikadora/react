@@ -17,6 +17,16 @@ export const rightsResponseMockup: RightsTypes.RightsResponseInterface = {
                         'Редактирвоать проекты',
                         'Точечная настройка разрешений к проекту'
                     ]
+                },
+                {
+                    id: 'Developers', 
+                    title: 'Разработчики', 
+                    rights:[
+                        'Добавлять все проекты, кроме инициатив',
+                        'Видеть все проекты',
+                        'Редактирвоать проекты',
+                        'Точечная настройка разрешений к проекту'
+                    ]
                 }                
             ],
             securityGroupsFromSharepoint: [
@@ -43,10 +53,10 @@ export const rightsResponseMockup: RightsTypes.RightsResponseInterface = {
             name: 'Иванов Иван Иванович',
             securityGroupsFromProject: [
                 {
-                    id: 'PortfolioAdmin', 
-                    title: 'Администраторы порфеля', 
+                    id: 'Developers', 
+                    title: 'Разработчики', 
                     rights:[
-                        'Добавлять проекты',
+                        'Добавлять все проекты, кроме инициатив',
                         'Видеть все проекты',
                         'Редактирвоать проекты',
                         'Точечная настройка разрешений к проекту'
@@ -55,18 +65,13 @@ export const rightsResponseMockup: RightsTypes.RightsResponseInterface = {
             ],
             securityGroupsFromSharepoint: [
                 {
-                    id: 'Dpp', 
-                    title: 'Работники ДПП', 
+                    id: 'LeadersOfOrganization', 
+                    title: 'Руководители организации', 
                     rights:[
                         'Все проекты',
-                        'Переключатель "Расширенный/краткий/Инициативы"',
-                        'Круговые диаграммы для сотрудников ДПП',
                         'Круговые диаграммы "Статус и риски"',
-                        'Программы',
-                        'Направления',
                         'Приостановленные проекты',
                         'Риски',
-                        'Контроль поручений',
                         'Документы проекта'
                     ]
                 }

@@ -1,49 +1,60 @@
 import * as React from 'react';
-import {connect} from 'react-redux';
+import * as Types from '../rights/types';
 import RowItem from '../table_row';
-import {withDataService}  from '../services/dataService';
 
-const ItemTable = ({user}:any) =>{
-  const {securityGroupsFromProject,securityGroupsFromSharepoint} = user;
+const ItemTable = (props: {user: Types.RightsInfoInterface}): React.FunctionComponentElement<void> => {
+  const {securityGroupsFromProject,securityGroupsFromSharepoint} = props.user;
   console.log('ItemTable');
-  console.log(user);
+  console.log(props.user);
   console.log(securityGroupsFromProject);
   console.log(securityGroupsFromSharepoint);
 
   return (
+    <div>
     <table>
       <thead>
         <tr>
           <th>Группа безопастности Project</th>
-          <th></th>
-          <th>Группа безопастности Sharepoint</th>
-          <th></th>
+          <th>Права</th>
         </tr>
       </thead>
     <tbody>
-      <tr>
         {
           securityGroupsFromProject.map((group:any) => {
             return(
               console.log('securityGroupsFromProject'),
               console.log(group),
-              <RowItem group = {group} />
+              <tr>
+                <RowItem group = {group} />
+              </tr>              
             )
           })
-        },
+        }
+    </tbody>
+    </table>
+    <table>
+      <thead>
+        <tr>
+        <th>Группа безопастности Sharepoint</th>
+        <th>Права</th>
+        </tr>
+      </thead>
+      <tbody>
         {
           securityGroupsFromSharepoint.map((group:any) => {
             return(
               console.log('securityGroupsFromSharepoint'),
               console.log(group),
-              <RowItem group = {group} />
+              <tr>
+                <RowItem group = {group} />
+              </tr>
              )
           })
         }
-      </tr>
-    </tbody>
+      </tbody>
     </table>
+    </div>
   )
 }
 
-export default withDataService()(connect()(ItemTable));
+export default ItemTable;

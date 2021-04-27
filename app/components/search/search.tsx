@@ -1,34 +1,38 @@
 import * as React from 'react';
 import './index.css';
+import {useSelector} from 'react-redux'
 import { Input } from 'antd';
-import { getMochUpUser, getData } from '../../store/actions';
-import {withDataService} from '../services/dataService';
+import { updateUser } from '../../store/actions/actions';
 import { useDispatch } from 'react-redux';
 
-// Компонент логики поиска
-const Search = () => {
 
-    const dispatch = useDispatch();
+// Компонент логики поиска
+const Search = (): React.FunctionComponentElement<void> => {
     //значение в строке поиска
     const [value, setValue] = React.useState<string>('');
-    const usersList = getData().payload.data;
+    
+    const dispatch = useDispatch();
+ 
+    //получаем юзеров
+    const userList = useSelector((state:any) => { 
+        return state.users });
+    console.log( 'userList = ' + userList);
 
-    function onInputChange(event:any) {
-            setValue(event.target.value);
-            checkingTheLogin(event.target.value);
-    }
-
-    function checkingTheLogin(login:string){
+    const onInputChange = (event:any) => {
+        const login = event.target.value;
         console.log('checkingTheLogin');
-        usersList.map((user:any) => {
+        userList.map((user:any) => {
             if(login == user.login){
                 console.log(login);
                 console.log(user.login);                
-                dispatch(getMochUpUser(true,user));
-                console.log(user.login + user.name);
+                dispatch(updateUser(true,user));
+                console.log(()=>{
+                    const data = useSelector((state:any) => state.data);
+                    return (data.isLoginTrue,data.user.login)
+                });
             }
         });
-    }
+    };
 
     return (
         <div className="search__inner">
@@ -36,11 +40,11 @@ const Search = () => {
                 className="search__input"
                 type="search"
                 value = {value}
-                onChange={onInputChange}
+                onChange={(event:any) =>{ setValue(event.target.value); onInputChange(event)}}
                 placeholder="Введите ФИО или логин пользователя..."
             />
         </div>
     );
 }
 
-export default withDataService()(Search);
+export default Search;
