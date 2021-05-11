@@ -2,21 +2,15 @@ import * as Types from '../actions/types';
 
 export const initialRightsState: Types.RightsInitialStateInterface = { 
     users:[],
-    isLoginTrue: false,
-    user:{
-        login: '',
-        name: '',
-        securityGroupsFromProject: [],
-        securityGroupsFromSharepoint: []
-    },
     isLoadingRights: false,
+    isModalVisible:false,
     errorData: null
 };
 
-const Reducers = (state = initialRightsState, action: any) => {
+const RightsRedicer = (state = initialRightsState, action: any) => {
     switch (action.type) {
         //загрузка
-        case 'LOADING_CARDS': {
+        case 'LOADING': {
             return {
                 ...state,
                 isLoadingRights: action.payload.data,
@@ -28,16 +22,30 @@ const Reducers = (state = initialRightsState, action: any) => {
                 ...state,
                 data: action.payload,
                 isLoadingRights: false,
-                isLoginTrue: false,
             }
         };
+        //Меняем статус видимости модалки
+        case 'GET_MODAL_VISIBLE': {
+            return {
+                ...state,
+                isModalVisible: !state.isModalVisible,
+            }
+        };
+        //Получаем информацию об ошибке
+        case 'GET_ERROR':
+            return {
+                ...state,
+                errorData: {
+                    type: action.payload.data.type,
+                    message: action.payload.data.message,
+                },
+            };
         //обновить пользователей из базы
         case 'UPDATE_MOCHUP_USERS': {
             return {
                 ...state,
                 users:action.payload.users,
                 isLoadingRights: false,
-                isLoginTrue:false
             }
         };
         //получить пользователей из базы
@@ -47,28 +55,9 @@ const Reducers = (state = initialRightsState, action: any) => {
                 users:state.users,
             }
         };
-        // изменить юзера
-        case 'UPDATE_USER': {
-            return {
-                ...state,
-                isLoginTrue: true,
-                user:{
-                    login: action.payload.user.login,
-                    name: action.payload.user.name,
-                    securityGroupsFromProject: action.payload.user.securityGroupsFromProject,
-                    securityGroupsFromSharepoint: action.payload.user.securityGroupsFromSharepoint
-                },
-            }
-        }
-        //получить
-        case 'GET_MOCHUP_USER': {
-            return {
-                user:state.user,
-                isLoginTrue: state.isLoginTrue
-            }
-        }
         default:
             return state;
     }
 };
-export default Reducers;
+
+export default RightsRedicer;

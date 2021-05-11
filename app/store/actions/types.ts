@@ -1,11 +1,18 @@
-import * as Types from '../../components/rights/types'
+import * as RightsTypes from '../../components/rights/types';
 
 export interface RightsInitialStateInterface {
-    users: Types.RightsResponseInterface[];
-    isLoginTrue:boolean;
-    user:Types.RightsInfoInterface,
+    users: RightsTypes.RightsResponseInterface[];
     isLoadingRights:boolean;
+    isModalVisible:boolean;
     errorData: null;
+}
+
+export interface AccordionInitialStateInterface {
+    isActiveKey: boolean,
+    data:{
+        isLoginTrue:boolean;
+        user:RightsTypes.RightsInfoInterface,
+    }
 }
 
 export interface GetDataSuccessInterface{
@@ -18,21 +25,28 @@ export interface GetDataSuccessInterface{
 export interface UpdateUserSuccessInterface{
     payload:{
         isLoginTrue:boolean;
-        user:Types.RightsInfoInterface,
+        user:RightsTypes.RightsInfoInterface,
     };
     type:'UPDATE_USER';
 }
 
 export interface UpdateUsersSuccessInterface{
     payload:{
-        users:Types.RightsResponseInterface[];
+        users:RightsTypes.RightsResponseInterface[];
     };
     type:'UPDATE_MOCHUP_USERS';
 }
 
 export interface GetUsersSuccessInterface{
     payload:{
-        users:Types.RightsResponseInterface[];
+        users:RightsTypes.RightsResponseInterface[];
     };
     type:'GET_MOCHUP_USERS';
+}
+
+export interface UpdateActiveKeyAccordionInterface {
+    payload:{
+        isActiveKey: boolean;
+    }
+    type: 'UPDATE_ACTIVE_KEY_ACCORDION';
 }

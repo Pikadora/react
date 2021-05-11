@@ -37,7 +37,6 @@
     flex: 1;
 }
 
-
 .search__input {
     border: 0px !important;
     border-radius: 10px 0px 10px 0px !important;
@@ -64,103 +63,22 @@ input[type="search"]::placeholder {
     color: #44517B; 
 }
 
-
-.grouping {
-    width: auto;
-    height: 56px;
-    text-align: left;
-    font-size: 16px;
-    font-weight: normal;
-    line-height: 18px;
-    color: #44517B;
-    padding: 0px;
-    background-color: #fff;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -moz-flex;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.grouping.ant-dropdown-open {
-    background-color: #44517B;
-}
-
-.grouping .grouping__name {
-    padding: 20px 30px;
-    font-size: 16px;
-    line-height: 18px;
-    text-align: left;
-    color: #44517B !important;
-}
-
-.grouping.ant-dropdown-open .grouping__name {
-    color: #fff !important;
-}
-
-.grouping .grouping__name::after {
-    background: url(/static/images/arrow-dropdown-default.png) no-repeat;
-    margin-left: 15px;
-    content: "";
-    background-size: contain;
-    width: 15px;
-    height: 8px;
-    display: inline-block;
-    position: relative;
-}
-
-.grouping.ant-dropdown-open .grouping__name::after {
-    background: url(/static/images/arrow-dropdown-active.png) no-repeat;
-    margin-left: 15px;
-    content: "";
-    background-size: contain;
-    width: 15px;
-    height: 8px;
-    display: inline-block;
-    position: relative;
-}
-
-.expand {
+.search__btn{
     float: right;
     padding: 0px 30px !important;
     border: none !important;
+    border-left: 1px solid #44517B !important;
     height: auto !important;
-    font-size: 16px !important;
     box-shadow: none !important;
     width: 210px;
-}
-.expand::after {
-    display: none !important;
+    border-radius:0px 10px 10px 0px !important;
 }
 
-.expand__name {
-    font-size: 16px;
+.search__btn-name {
+    font-size: 16px ;
     line-height: 18px;
+    font-weight: normal;
     text-align: left;
     color: #44517B;
     position: relative;
 }
-
-.expand__name::after{
-    margin-left: 15px;
-    content: "";
-    top: 1px;
-    width: 18px;
-    height: 12px;
-    display: inline-block;
-    position: relative;
-}
-
-.expand__name.expand__name_expand::after{
-    background: url(/static/images/open-all.png) no-repeat;
-    background-size: contain;
-}
-
-.expand__name.expand__name_collapse::after{
-    background: url(/static/images/close-all.png) no-repeat;
-    background-size: contain;
-}
-

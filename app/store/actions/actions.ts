@@ -37,6 +37,12 @@ export const loading = (data: boolean) => {
     };
 }
 
+export const getModalVisible= () => {
+    return {
+        type: 'GET_MODAL_VISIBLE',
+    };
+}
+
 export const getError = (data: {type: "modal", message: string | null}) => {
     return {
         payload: { data },
@@ -76,5 +82,14 @@ export const getMochUpUsers = (users:any): Types.GetUsersSuccessInterface => {
             users:users,
         },
         type: 'GET_MOCHUP_USERS',
+    }
+}
+
+export const updateActiveKeyAccordion = (key:boolean):Types.UpdateActiveKeyAccordionInterface => {
+    return{
+        payload:{
+            isActiveKey: key,
+        },
+        type: 'UPDATE_ACTIVE_KEY_ACCORDION',
     }
 }

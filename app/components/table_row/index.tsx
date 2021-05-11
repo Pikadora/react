@@ -4,7 +4,7 @@ const RowItem = (props:{group:any}): React.FunctionComponentElement<void> => {
     const { title, rights } = props.group;
     const allrights:any = [];
     rights.map((right:any) => {
-        allrights.push(<li>{right}</li>);
+        allrights.push(<li key = {right.id} >{right.name}</li>);
     })
     return (
         <React.Fragment>

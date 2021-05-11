@@ -20,145 +20,9 @@
     .dialog__window {
         width: 1400px !important;
     }
-    .project__card-detail > p {
-        font-size: 14px !important;
-        line-height: 21px !important;
-        margin-bottom: 15px !important;
-    }
-    .project__card-detail .project__card-title {
-        font-size: 18px !important;
-    }
-    .project__card-detail .card__params-content {
-        font-size: 14px !important;
-        line-height: 16px !important;
-    }
-    .dialog__window .card__param {
-        margin-right: 30px !important;
-    }
-    .project__card-detail .card__params-content .card__params-list tr + tr td {
-        padding-top: 5px;
-    }
-    .project__card-detail .card__params.card__params-table .card__params-icon {
-        margin-right: 15px;
-    }
-    .project__card-detail .card__params-icon {
-        width: 20px;
-        height: 20px;
-    }
-    .project__card-detail .card__params.card__params-table {
-        padding: 15px 0px;
-    }
-    .target__results-detail {
-        padding: 20px 15px;
-    }
-    .target__results-detail .target__results-description * {
-        font-size: 14px !important;
-        line-height: 21px !important;
-    }
-    #roadmap .tbody__head,
-    .table table th,
-    .table table td {
-        font-size: 14px;
-        line-height: 16px;
-        padding: 10px 15px;
-    }
-    .modal__content-block .modal__content-block__name span {
-        line-height: 40px;
-    }
-    .modal__content-block .modal__content-block__name {
-        font-size: 14px;
-        height: 40px;
-    }
-    .documents__card {
-        padding: 20px;
-    }
-    .documents__part {
-        font-size: 14px;
-        line-height: 16px;
-        margin-bottom: 20px;
-    }
-    .tree__node-root {
-        padding-bottom: 20px;
-    }
-    .document__param-content {
-        font-size: 14px;
-        line-height: 16px;
-        padding-left: 22px;
-    }
-    .document__param-link {
-        font-size: 14px;
-        line-height: 16px;
-        padding: 15px 20px 5px 20px;
-    }
-    .document__param-icon {
-        width: 21px;
-        height: auto;
-    }
-    .tree__node::before,
-    .tree__container::before,
-    .tree__node.tree__node-folder_last::after {
-        bottom: 12px;
-    }
-    .tree__node.tree__node-folder_last::after {
-        top: 26px;
-    }
-    .tree__node::before {
-        width: 25px;
-    }
-    .tree__node-folder {
-        padding-left: 35px;
-        padding-top: 15px;
-    }
-    .tree__node.tree__node-folder::before {
-        top: 25px;
-    }
-    .modal__content-block.modal__content-block_roadmap {
-        max-height: 470px;
-    }
-    #roadmap {
-        max-height: calc(470px - 40px);
-    }
-    #roadmap #roadmap__columns th:nth-child(1), #roadmap #roadmap__columns td:nth-child(1) {
-        width: 60px;
-    }
-    #roadmap #roadmap__columns th:nth-child(2), #roadmap #roadmap__columns td:nth-child(2) {
-        width: 400px;
-    }
-    #roadmap #roadmap__columns th:nth-child(3), #roadmap #roadmap__columns td:nth-child(3) {
-        width: 110px;
-    }
-    #roadmap #roadmap__columns th:nth-child(4), #roadmap #roadmap__columns td:nth-child(4) {
-        width: 110px;
-    }
-    #roadmap #roadmap__columns table {
-        width: 680px;
-    }
-    #roadmap #roadmap__columns .thead-sticky {
-        height: 74px !important;
-    }
-    #roadmap #roadmap__roads thead tr:nth-child(2) .thead-sticky {
-        top: 37px;
-    }
 }
 
 @media (max-width: 1499px) {
-    .browser .browser__list .browser__list-item {
-        width: 220px;
-    }
-    .browser .browser__icon {
-        width: 100px;
-    }
-    .browser .browser__heading,
-    .browser .browser__title {
-        font-size: 18px;
-    }
-    .browser .browser__description,
-    .browser .browser__subtitle {
-        font-size: 14px;
-    }
-    .browser .browser__list .browser__list-item + .browser__list-item {
-        margin-left: 25px;
-    }
     .error {
         padding: 25px;
     }
@@ -200,29 +64,20 @@
         padding: 25px 30px;
     }
     .result__notfound .result__notfound-text,
-    .accordion__inner,
-    .selection .selection__title,
-    .group label > p,
-    .search__input,
-    .grouping .grouping__name,
-    .expand__name, 
-    .filters__inner .filters__name {
+    .accordion__inner, .search-btn__name,  .rights__table table th{
         font-size: 14px !important;
         line-height: 16px !important;
     }
-    .grouping .grouping__name,
-    .filters__inner .filters__name {
-        padding: 15px 25px;
-    }
     .accordion__inner,
-    .grouping,
-    .search,
-    .filters__inner {
+    .search {
         height: 46px;
     }
-    .expand {
-        width: 184px;
-        padding: 0px 25px !important;
+    .rights__table table th{
+        height: 40px;
+    }
+
+    .rights__table table td{
+        padding: 5px 10px;
     }
     .search__inner::before {
         width: 16px;
@@ -230,167 +85,22 @@
         top: 15px;
         margin-left: 25px;
     }
-    .group__checkbox+label::before {
-        width: 18px;
-        height: 18px;
-    }
-    .group label > p {
-        padding-left: 15px;
-    }
-    .accordion__sum {
-        font-size: 12px;
-        padding: 0px 25px;
-    }
     .accordion__name {
         left: 25px;
-    }
-    .accordion__sum,
-    .accordion__name {
         top: 15px;
-    }
-    .card{
-        float: none;
-        width: 100%;
-    }
-    .filters,
-    .selection,
-    .accordions,
-    .project__card {
-        margin-top: 25px !important;
-    }
-    .accordion + .accordion {
-        margin-top: 25px;
     }
     .dialog__window {
         width: 1100px !important;
     }
-    .project__card-detail > p {
-        font-size: 12px !important;
-        line-height: 16px !important;
-        margin-bottom: 10px !important;
-    }
-    .project__card-detail .project__card-title {
-        font-size: 16px !important;
-    }
-    .project__card-detail .card__params-content {
-        font-size: 12px !important;
-        line-height: 14px !important;
-    }
-    .dialog__window .card__param {
-        margin-right: 20px !important;
-    }
-    .project__card-detail .card__params-content .card__params-list tr + tr td {
-        padding-top: 5px;
-    }
-    .project__card-detail .card__params.card__params-table .card__params-icon {
-        margin-right: 10px;
-    }
-    .project__card-detail .card__params-icon {
-        width: 16px;
-        height: 16px;
-    }
-    .project__card-detail .card__params.card__params-table {
-        padding: 10px 0px;
-    }
-    .target__results-detail {
-        padding: 15px;
-    }
-    .target__results-detail .target__results-description * {
-        font-size: 12px !important;
-        line-height: 18px !important;
-    }
-    #roadmap .tbody__head,
-    .table table th,
-    .table table td {
-        font-size: 12px;
-        line-height: 14px;
-        padding: 8px 12px;
-    }
-    .modal__content-block .modal__content-block__name span {
-        line-height: 34px;
-    }
-    .modal__content-block .modal__content-block__name {
-        font-size: 12px;
-        height: 34px;
-    }
-    .documents__card {
-        padding: 15px;
-    }
-    .documents__part {
-        font-size: 12px;
-        line-height: 14px;
-        margin-bottom: 15px;
-    }
-    .tree__node-root {
-        padding-bottom: 15px;
-    }
-    .document__param-content {
-        font-size: 12px;
-        line-height: 14px;
-        padding-left: 17px;
-    }
-    .document__param-link {
-        font-size: 12px;
-        line-height: 14px;
-        padding: 10px 15px 5px 15px;
-    }
-    .document__param-icon {
-        width: 21px;
-        height: auto;
-    }
-    .tree__node::before,
-    .tree__container::before,
-    .tree__node.tree__node-folder_last::after {
-        bottom: 12px;
-    }
-    .tree__node.tree__node-folder_last::after {
-        top: 21px;
-    }
-    .tree__node::before {
-        width: 20px;
-    }
-    .tree__node-folder {
-        padding-left: 30px;
-        padding-top: 10px;
-    }
-    .tree__node.tree__node-folder::before {
-        top: 20px;
-    }
-    .modal__content-block.modal__content-block_roadmap {
-        max-height: 400px;
-    }
-    #roadmap {
-        max-height: calc(400px - 34px);
-    }
-    #roadmap #roadmap__columns th:nth-child(1), #roadmap #roadmap__columns td:nth-child(1) {
-        width: 60px;
-    }
-    #roadmap #roadmap__columns th:nth-child(2), #roadmap #roadmap__columns td:nth-child(2) {
-        width: 300px;
-    }
-    #roadmap #roadmap__columns th:nth-child(3), #roadmap #roadmap__columns td:nth-child(3) {
-        width: 90px;
-    }
-    #roadmap #roadmap__columns th:nth-child(4), #roadmap #roadmap__columns td:nth-child(4) {
-        width: 90px;
-    }
-    #roadmap #roadmap__columns table {
-        width: 540px;
-    }
-    #roadmap #roadmap__columns .thead-sticky {
-        height: 62px !important;
-    }
-    #roadmap #roadmap__roads thead tr:nth-child(2) .thead-sticky {
-        top: 31px;
+    .search__btn{
+        width: 184px;
+        padding: 0px 25px !important;
     }
 }
 
 @media (max-width: 1199px) {
     .dialog__window {
         width: 900px !important;
-    }
-    .project__card-detail .card__params.card__params-table .card__param:nth-child(1) {
-        max-width: 45%;
     }
 }
 
@@ -457,34 +167,16 @@
     }
     .result__notfound .result__notfound-text,
     .accordion__inner,
-    .selection .selection__title,
-    .group label > p,
-    .search__input,
-    .grouping .grouping__name,
-    .expand__name, 
-    .filters__inner .filters__name {
+    .search__input, .search__btn-name, .rights__table table th {
         font-size: 12px !important;
         line-height: 14px !important;
     }
-    .expand,
-    .grouping .grouping__name,
-    .filters__inner .filters__name {
+    .search__btn {
         padding: 10px 20px;
-    }
-    .expand {
         width: 160px;
     }
-    .accordion__inner, .grouping, .search, .filters__inner {
+    .accordion__inner, .search {
         height: 34px;
-    }
-    .accordion + .accordion {
-        margin-top: 20px;
-    }
-    .filters, .selection, .accordions, .project__card {
-        margin-top: 20px !important;
-    }
-    .filters__inner {
-        margin: 0px 20px 0px 0px;
     }
     .search__inner::before {
         width: 13px;
@@ -492,16 +184,8 @@
         top: 11px;
         margin-left: 20px;
     }
-    .accordion__sum, .accordion__name {
+    .accordion__name {
         top: 10px;
-    }
-    .grouping.ant-dropdown-open .grouping__name::after,
-    .filters__inner.ant-dropdown-open .filters__name::after,
-    .filters__inner .filters__name::after,
-    .grouping .grouping__name::after {
-        width: 12px;
-        height: 6px;
-        margin-left: 10px;
     }
     .accordion__inner.accordion__inner_active .accordion__name::before,
     .accordion__inner .accordion__name::before {
@@ -509,65 +193,11 @@
         height: 6px;
         margin-right: 10px;
     }
-    .expand__name {
+    .search__btn-name {
         top: -1px;
-    }
-    .expand__name::after {
-        width: 16px;
-        height: 11px;
     }
     .accordion__name {
         left: 20px;
-    }
-    .accordion__sum {
-        padding: 0px 20px;
-        font-size: 10px;
-    }
-    .selection .selection__cancel {
-        font-size: 10px;
-        margin-left: 10px;
-    }
-    .project__card-title a {
-        font-size: 14px !important;
-        line-height: 16px !important;
-    }
-    .project__card-title {
-        padding: 4px 10px;
-        margin-left: 10px;
-    }
-    .project__card > p, .project__card > span {
-        font-size: 10px;
-        line-height: 12px;
-        padding: 10px;
-    }
-    .target__results {
-        height: 94px;
-        margin: 0px 10px;
-        padding-right: 10px;
-    }
-    .target__results p {
-        font-size: 10px;
-        line-height: 12px;
-    }
-    .project__card .card__params-icon {
-        margin: 12px 10px;
-    }
-    .project__card .card__params-content {
-        font-size: 10px;
-        margin: 13px 0px;
-    }
-    .selection .selection__filter .selection__filter-cancel,
-    .selection .selection__filter .selection__filter-name {
-        font-size: 10px;
-        padding: 2px 7px;
-    }
-    .card__tags {
-        padding: 0px 10px 10px 10px;
-    }
-    .card__tags .tag {
-        margin-right: 10px;
-        font-size: 10px;
-        padding: 2px 7px;
     }
     .border-gray {
         border-width: 2px;
@@ -575,114 +205,20 @@
     .dialog__window {
         width: 700px !important;
     }
-    .project__card-detail > p {
-        font-size: 10px !important;
-        line-height: 12px !important;
-        margin-bottom: 5px !important;
+    .user__name{
+        padding:10px;
+        font-size: 12px;
+        line-height: 14px;
     }
-    .project__card-detail .project__card-title {
-        font-size: 14px !important;
-        border-width: 2px;
-    }
-    .project__card-detail .card__params.card__params-table .card__params-icon {
-        display: none;
-    }
-    .project__card-detail .card__params-content {
-        font-size: 10px !important;
-        line-height: 12px !important;
-    }
-    .project__card-detail .card__params-content .card__params-list tr + tr td {
-        padding-top: 2px;
-    }
-    .target__results-detail .target__results-description * {
-        font-size: 10px !important;
-        line-height: 15px !important;
-    }
-    .modal__content-block .modal__content-block__name span {
-        line-height: 30px;
-    }
-    .modal__content-block .modal__content-block__name {
-        font-size: 10px;
+    
+    .rights__table table th{
         height: 30px;
     }
-    #roadmap .tbody__head,
-    .table table th, .table table td {
-        font-size: 10px;
-        line-height: 12px;
-    }
-    .documents__part {
-        font-size: 10px;
-        line-height: 12px;
-        margin-bottom: 10px;
-    }
-    .tree__node-root {
-        padding-bottom: 10px;
-    }
-    .document__param-content {
-        font-size: 10px;
-        line-height: 12px;
-        padding-left: 14px;
-    }
-    .document__param-link {
-        font-size: 10px;
-        line-height: 12px;
-        padding: 5px 10px 5px 10px;
-    }
-    .document__param-icon {
-        width: 16px;
-        height: auto;
-    }
-    .tree__node::before,
-    .tree__container::before,
-    .tree__node.tree__node-folder_last::after {
-        bottom: 12px;
-    }
-    .tree__node.tree__node-folder_last::after {
-        top: 21px;
-    }
-    .tree__node.tree__node-folder_last::after,
-    .tree__node.tree__node-folder::before, 
-    .tree__container::before {
-        left: 7px;
-    }
-    .tree__node {
-        padding-left: 7px;
-    }
-    .tree__node::before {
-        width: 20px;
-    }
-    .tree__node-folder {
-        padding-left: 27px;
-    }
-    .tree__node.tree__node-folder::before {
-        top: 20px;
-    }
-    #roadmap #roadmap__columns .thead-sticky {
-        height: 58px !important;
-    }
-    #roadmap #roadmap__roads thead tr:nth-child(2) .thead-sticky {
-        top: 29px;
-    }
-    .modal__content-block.modal__content-block_roadmap {
-        max-height: 300px;
-    }
-    #roadmap #roadmap__columns th:nth-child(1), #roadmap #roadmap__columns td:nth-child(1) {
-        width: 50px;
-    }
-    #roadmap #roadmap__columns th:nth-child(2), #roadmap #roadmap__columns td:nth-child(2) {
-        width: 160px;
-    }
-    #roadmap #roadmap__columns th:nth-child(3), #roadmap #roadmap__columns td:nth-child(3) {
-        width: 80px;
-    }
-    #roadmap #roadmap__columns th:nth-child(4), #roadmap #roadmap__columns td:nth-child(4) {
-        width: 80px;
-    }
-    #roadmap #roadmap__columns table {
-        width: 370px;
-    }
-    #roadmap {
-        max-height: calc(300px - 30px);
+
+    .rights__table table td{
+        padding: 5px 5px;
+        font-size: 12px;
+        line-height: 14px;
     }
 }
 

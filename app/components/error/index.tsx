@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 // Компонент отображения блока с ошибкой сервера
 const ErrorBox = (): React.FunctionComponentElement<void> => {
     // Получаем информацию об ошибке
-    const errorData = useSelector((state: any) => state.errorData);
+    const errorData = useSelector((state: any) => state.rights.errorData);
     return (
         // Добавляем класс для визуализации в зависимости от того, где выводить ошибку - в модальном окне детальной карточке, или на общей странице
         <div className={`error${errorData.type === "modal" ? " error_modal" : ""}`}>

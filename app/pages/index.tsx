@@ -1,21 +1,28 @@
 import * as React from 'react';
-import ItemTable from '../components/table';
 import { useSelector} from 'react-redux';
 import SearchBox from '../components/search/index'
+import Preloader from '../components/preloader';
+import ModalBox from '../components/modal';
+import AccordionBox from '../components/accordion';
+
 // Компонент для вывода таблицы безопасности по sharepoint/project
 const RightsBox = (): React.FunctionComponentElement<void> => {
 
+  //Получаем статус загрузки
+  const isloading = useSelector((state:any) => state.rights.isLoadingRights);
+  // получаем аккордеон
+  const accordion = useSelector((state: any) => state.accordion);
+  //Получаем необходимость модалки
+  const isModalVisible = useSelector((state:any) => state.rights.isModalVisible);
   //получаем результат проверки юзера
-  const isLoginTrue = useSelector((state:any) => state.isLoginTrue);
-  //получаем юзера
-  const user = useSelector((state:any) => state.user);
-  console.log('RightBox' + isLoginTrue + ' ' + user);
+  const isLoginTrue = useSelector((state:any) => state.accordion.data.isLoginTrue);
 
   return ( 
     <>
     {<SearchBox />}
-    {(isLoginTrue == true  && user.name != undefined) ?
-          <table><ItemTable user={user}/></table> : <div></div>}
+    {isModalVisible ? <ModalBox /> : ""}
+    {isloading ? <Preloader position={"relative"} /> : ((isLoginTrue == true && accordion.data.user.name != '') ?
+      <AccordionBox data={accordion}/> : (isModalVisible ? <ModalBox /> : null ))}
     </>
   );
 }

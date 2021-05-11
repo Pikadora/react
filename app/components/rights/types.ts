@@ -1,14 +1,18 @@
+export type RightInterface = {
+    id: string, 
+    name:string,
+}
 
 export type RightsInfoFromSharepointInterface = {
     id: string, 
     title: string, 
-    rights:Array<string>
+    rights:RightInterface[]
 }
 
 export type RightsInfoFromProjectInterface = {
     id: string, 
     title: string, 
-    rights:Array<string>
+    rights:RightInterface[]
 }
 
 export type RightsInfoInterface = {
