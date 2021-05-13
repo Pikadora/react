@@ -10,7 +10,7 @@ const App = () => {
     <BrowserRouter>
         <>
           <HeaderBox />
-          <div className="page">
+          <div className="main">
             <Route exact={true}>
               <RightBox />
             </Route>
