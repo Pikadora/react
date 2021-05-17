@@ -1,12 +1,45 @@
 import * as React from 'react';
 import * as Types from '../rights/types';
-import RowItem from '../table_row';
+import RowItems from '../table_row';
 
 import './index.css';
 
 const ItemTable = (props: {user: Types.RightsInfoInterface, key:string}): React.FunctionComponentElement<void> => {
   const {securityGroupsFromProject,securityGroupsFromSharepoint} = props.user;
   console.log('ItemTable');
+
+  let rowList:any = [];
+
+  const getRowList = (project:any, sharepoint:any) => {
+    let n = 0;
+    while (n <= project.length - 1 || n <= sharepoint.length - 1){
+      let projectRow;
+      let sharepointRow;
+
+      if(project[n] == undefined){
+        projectRow = <td id='empty'></td>
+      }
+      else{
+        projectRow = <td id={project[n].id}>{project[n].title}</td>
+        
+      }
+
+      if(sharepoint[n] == undefined){
+        sharepointRow = <td id='empty'></td>
+      }
+      else{
+        sharepointRow = <td id={sharepoint[n].id}>{sharepoint[n].title}</td>
+      }
+
+      rowList.push({projectRow:projectRow,sharepointRow:sharepointRow});
+      console.log('rowList' + rowList);
+      n++;
+    }
+  };
+
+  getRowList(securityGroupsFromProject, securityGroupsFromSharepoint);
+
+  console.log(rowList);
 
   return (
     <div className="rights" >
@@ -15,43 +48,19 @@ const ItemTable = (props: {user: Types.RightsInfoInterface, key:string}): React.
           <thead>
             <tr>
               <th>Группа безопастности Project</th>
-              <th>Права</th>
+              <th>Группа безопастности Sharepoint</th>
             </tr>
           </thead>
           <tbody>
             {
-              securityGroupsFromProject.map((group:any) => {
-                return(
-                  <tr key={group.id}>
-                    <RowItem group = {group} />
-                  </tr>              
-                )
+              rowList.map((el:any) => {
+                return <RowItems groupProject={el.projectRow.props}
+                                 groupSharepoint={el.sharepointRow.props} />
               })
             }
           </tbody>
         </table>
       </div>
-    <div className="rights__table">
-      <table>
-        <thead>
-          <tr>
-          <th>Группа безопастности Sharepoint</th>
-          <th>Права</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            securityGroupsFromSharepoint.map((group:any) => {
-              return(
-                <tr key={group.id}>
-                  <RowItem group = {group} />
-                </tr>
-              )
-            })
-          }
-        </tbody>
-      </table>
-    </div>
   </div>
   )
 }

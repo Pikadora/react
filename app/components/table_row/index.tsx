@@ -1,17 +1,18 @@
 import * as React from 'react';
 
-const RowItem = (props:{group:any}): React.FunctionComponentElement<void> => {
-    const { title, rights } = props.group;
-    const allrights:any = [];
-    rights.map((right:any) => {
-        allrights.push(<li key = {right.id} >{right.name}</li>);
-    })
+const RowItems = (props:{groupProject:any,groupSharepoint:any}): React.FunctionComponentElement<void> => {
+    const { groupProject, groupSharepoint } = props;
+    console.log('groupProject' + groupProject.id + '' + groupProject.children);
+    console.log('groupSharepoint' + groupSharepoint.id + '' + groupSharepoint.children);
+
     return (
         <React.Fragment>
-            <td>{title}</td>
-            <td><ul>{allrights}</ul></td>
+            <tr>
+                <td id={groupProject.id}>{groupProject.children}</td> 
+                <td id={groupSharepoint.id}>{groupSharepoint.children}</td> 
+            </tr>
         </React.Fragment>
     );
 };
 
-export default RowItem;
+export default RowItems;

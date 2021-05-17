@@ -10,7 +10,7 @@ export const rightsResponseMockup: RightsTypes.RightsResponseInterface = {
             securityGroupsFromProject: [
                 {
                     id: 'PortfolioAdmin', 
-                    title: 'Администраторы порфеля', 
+                    title: 'Администраторы портфеля', 
                     rights:[
                         {
                             id:'addProjects',
@@ -44,7 +44,7 @@ export const rightsResponseMockup: RightsTypes.RightsResponseInterface = {
                         },
                         {
                             id:'editProjects',
-                            name:'Редактирвоать проекты',
+                            name:'Редактировать проекты',
                         },
                         {
                             id:'settingPermissions',
@@ -121,7 +121,7 @@ export const rightsResponseMockup: RightsTypes.RightsResponseInterface = {
                         },
                         {
                             id:'editProjects',
-                            name:'Редактирвоать проекты',
+                            name:'Редактировать проекты',
                         },
                         {
                             id:'settingPermissions',
@@ -132,27 +132,107 @@ export const rightsResponseMockup: RightsTypes.RightsResponseInterface = {
             ],
             securityGroupsFromSharepoint: [
                 {
+                    id: 'Dpp', 
+                    title: 'Работники ДПП', 
+                    rights:[
+                        {
+                            id:'allProjects',
+                            name:'Все проекты',
+                        },
+                        {
+                            id:'switch',
+                            name:'Переключатель "Расширенный/краткий/Инициативы"',
+                        },
+                        {
+                            id:'diagrammsForDPP',
+                            name:'Круговые диаграммы для сотрудников ДПП',
+                        },
+                        {
+                            id:'diargammsStatusAndRisks',
+                            name:'Круговые диаграммы "Статус и риски"',
+                        },
+                        {
+                            id:'programms',
+                            name:'Программы',
+                        },
+                        {
+                            id:'directions',
+                            name:'Направления',
+                        },
+                        {
+                            id:'suspendedProjects',
+                            name:'Приостановленные проекты',
+                        },
+                        {
+                            id:'Risks',
+                            name:'Риски',
+                        },
+                        {
+                            id:'controlOfOrders',
+                            name:'Контроль поручений',
+                        },
+                        {
+                            id:'documentsOfProject',
+                            name:'Документы проекта'
+                        }
+                    ]
+                },
+                {
                     id: 'LeadersOfOrganization', 
                     title: 'Руководители организации', 
                     rights:[
                         {
-                            id:'',
+                            id:'allProjects',
                             name:'Все проекты',
                         },
                         {
-                            id:'',
+                            id:'diagrammsForDPP',
                             name:'Круговые диаграммы "Статус и риски"',
                         },
                         {
-                            id:'',
+                            id:'suspendedProjects',
                             name:'Приостановленные проекты',
                         },
                         {
-                            id:'',
+                            id:'Risks',
                             name:'Риски',
                         },
                         {
-                            id:'',
+                            id:'documentsOfProject',
+                            name:'Документы проекта'
+                        }
+                    ]
+                },
+                {
+                    id: 'OnTheProject', 
+                    title: 'По проектам (расширенный)', 
+                    rights:[
+                        {
+                            id:'onlyTheirProjects',
+                            name:'Только свои проекты',
+                        },
+                        {
+                            id:'diargammsStatusAndRisks',
+                            name:'Круговые диаграммы "Статус и риски"',
+                        },
+                        {
+                            id:'programms',
+                            name:'Программы',
+                        },
+                        {
+                            id:'directions',
+                            name:'Направления',
+                        },
+                        {
+                            id:'suspendedProjects',
+                            name:'Приостановленные проекты',
+                        },
+                        {
+                            id:'Risks',
+                            name:'Риски',
+                        },
+                        {
+                            id:'documentsOfProject',
                             name:'Документы проекта'
                         }
                     ]
@@ -285,7 +365,7 @@ export const rightsResponseMockup: RightsTypes.RightsResponseInterface = {
 //        rights:[
 //            'Добавлять проекты',
 //            'Видеть все проекты',
-//            'Редактирвоать проекты',
+//            'Редактировать проекты',
 //            'Точечная настройка разрешений к проекту'
 //        ]
 //    },
@@ -316,7 +396,7 @@ export const rightsResponseMockup: RightsTypes.RightsResponseInterface = {
 //        rights:[
 //            'Добавлять все проекты, кроме инициатив',
 //            'Видеть все проекты',
-//            'Редактирвоать проекты',
+//            'Редактировать проекты',
 //            'Точечная настройка разрешений к проекту'
 //        ]
 //    },
@@ -342,7 +422,7 @@ export const rightsResponseMockup: RightsTypes.RightsResponseInterface = {
 //        rights:[
 //            'Добавлять все проекты, кроме инициатив',
 //            'Видеть только свои проекты',
-//            'Редактирвоать свои проекты',
+//            'Редактировать свои проекты',
 //            'Точечная настройка разрешений к проекту'
 //        ]
 //    },
@@ -352,7 +432,7 @@ export const rightsResponseMockup: RightsTypes.RightsResponseInterface = {
 //        rights:[
 //            'Добавлять все проекты, кроме инициатив',
 //            'Видеть только свои проекты',
-//            'Редактирвоать свои проекты',
+//            'Редактировать свои проекты',
 //            'Точечная настройка разрешений к проекту'
 //        ]
 //    },
